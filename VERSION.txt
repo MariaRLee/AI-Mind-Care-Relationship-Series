@@ -1,2 +1,0 @@
-Package build: V1.4
-The website itself intentionally does not display or require a version number in its URL.

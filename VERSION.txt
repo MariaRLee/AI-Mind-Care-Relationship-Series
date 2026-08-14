@@ -1,8 +1,0 @@
-V1.6
-2026-08-14
-- Added 說明 button and ABOUT.html from user-provided content.
-- Removed the homepage hero slogan, intro paragraph, and demo translation box.
-- Added large 夫妻 / 親子 / 朋友 category buttons under the AI × 溝通 × 情緒覺察 × 日常關係練習 line.
-- EP01: moved video button next to title; added AI 情緒翻譯 below 核心.
-- Added EP03–EP12 with titles, 核心, and AI 情緒翻譯.
-- Retained EP02 core text as previously provided.

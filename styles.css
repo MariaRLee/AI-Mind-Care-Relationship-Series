@@ -1,0 +1,454 @@
+:root {
+  --bg: #fffaf6;
+  --surface: #ffffff;
+  --surface-soft: #fff1ea;
+  --surface-warm: #fff7f2;
+  --ink: #40312e;
+  --muted: #786762;
+  --accent: #945f56;
+  --accent-dark: #7f4f48;
+  --accent-soft: #e7a399;
+  --line: #ead8d1;
+  --max: 1180px;
+  --shadow: 0 10px 28px rgba(86, 55, 49, .055);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--bg) 0%, #fff 62%, var(--bg) 100%);
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.55;
+}
+a { color: inherit; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,250,246,.96);
+  backdrop-filter: blur(12px);
+}
+.header-inner {
+  width: min(calc(100% - 32px), var(--max));
+  min-height: 88px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.brand {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.brand-heart {
+  width: 54px;
+  height: 54px;
+  flex: 0 0 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f6d4cc;
+  color: var(--accent);
+  font-size: 33px;
+  line-height: 1;
+}
+.brand-copy strong,
+.brand-copy span { display: block; }
+.brand-copy strong {
+  font-size: clamp(20px, 1.75vw, 27px);
+  line-height: 1.08;
+  letter-spacing: .005em;
+  white-space: nowrap;
+}
+.brand-copy span {
+  margin-top: 3px;
+  color: var(--ink);
+  font-size: clamp(19px, 1.65vw, 25px);
+  line-height: 1.08;
+  font-weight: 850;
+}
+
+.header-actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.top-btn {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 850;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.top-btn:hover { background: var(--surface-soft); }
+.top-btn.lang-active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+  cursor: default;
+}
+.top-btn.sinwee { padding-left: 14px; padding-right: 14px; }
+
+.compact-hero {
+  width: min(calc(100% - 32px), var(--max));
+  margin: 0 auto;
+  padding: 26px 0 17px;
+}
+.kicker,
+.series-label {
+  margin: 0;
+  color: #d77c72;
+  font-weight: 900;
+}
+.compact-hero .kicker {
+  font-size: clamp(19px, 1.9vw, 25px);
+  letter-spacing: .035em;
+}
+.relationship-tabs,
+.season-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.relationship-tabs { margin-top: 14px; }
+.relationship-btn,
+.season-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--accent);
+  font-weight: 900;
+  text-decoration: none;
+}
+.relationship-btn {
+  min-width: 92px;
+  min-height: 43px;
+  padding: 8px 18px;
+  font-size: 18px;
+}
+.relationship-btn.active,
+.season-btn.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+.relationship-btn.future,
+.season-btn.future {
+  cursor: default;
+}
+
+.couple-section {
+  width: min(calc(100% - 32px), var(--max));
+  margin: 0 auto;
+  padding: 15px 0 36px;
+}
+.section-head { margin-bottom: 12px; }
+.series-label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  letter-spacing: .045em;
+}
+.section-head h1 {
+  margin: 0;
+  font-size: clamp(25px, 2.25vw, 33px);
+  line-height: 1.2;
+}
+.season-tabs { margin: 13px 0 14px; }
+.season-btn {
+  min-height: 40px;
+  padding: 7px 14px;
+  font-size: 14px;
+}
+
+.season-intro {
+  margin-bottom: 15px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(145deg, #fff9f5, #fff1ea);
+}
+.season-intro .season-kicker {
+  margin: 0 0 4px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 900;
+}
+.season-theme-large {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(26px, 2.65vw, 38px);
+  line-height: 1.18;
+  font-weight: 900;
+}
+.series-concept-title {
+  margin: 13px 0 4px;
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 900;
+}
+.season-intro p {
+  margin: 0;
+  color: #665451;
+  font-size: 15px;
+}
+.season-intro p + p { margin-top: 5px; }
+.ai-role { font-weight: 720; }
+
+.episode-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+}
+.episode-card {
+  min-width: 0;
+  padding: 15px 17px;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+.episode-featured { background: linear-gradient(150deg, #fff, #fff8f4); }
+.ep-no {
+  color: #d77c72;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .09em;
+}
+.episode-title-row {
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+}
+.episode-title-row h2 {
+  min-width: 0;
+  margin: 0;
+  font-size: clamp(18px, 1.55vw, 23px);
+  line-height: 1.28;
+}
+.watch-btn {
+  flex: 0 0 auto;
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 850;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.watch-btn:hover { background: var(--accent-dark); }
+.watch-btn.disabled {
+  border: 1px solid #d8c3bc;
+  background: #f5eeeb;
+  color: #967b74;
+  cursor: default;
+}
+.episode-core {
+  margin-top: 10px;
+  padding-top: 9px;
+  border-top: 1px solid var(--line);
+}
+.episode-core strong,
+.emotion-translation strong {
+  display: block;
+  color: var(--accent);
+  font-size: 12px;
+}
+.episode-core p {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.emotion-translation {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f8e5df;
+}
+.emotion-translation p {
+  margin: 3px 0 0;
+  color: #59423e;
+  font-size: 14px;
+  font-weight: 740;
+}
+
+.site-footer {
+  width: min(calc(100% - 32px), var(--max));
+  margin: 0 auto;
+  padding: 20px 0 34px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+.site-footer p { margin: 4px 0; }
+.site-footer a {
+  color: var(--accent);
+  font-weight: 800;
+  text-decoration: none;
+}
+.site-footer a:hover { text-decoration: underline; }
+
+/* About */
+.about-main,
+.terms-main {
+  width: min(calc(100% - 32px), 980px);
+  margin: 0 auto;
+  padding: 34px 0 48px;
+}
+.about-hero,
+.about-content,
+.terms-hero {
+  padding: 25px 27px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--surface-warm);
+}
+.about-hero h1,
+.terms-hero h1 {
+  margin: 0 0 14px;
+  font-size: clamp(27px, 3.6vw, 40px);
+  line-height: 1.2;
+}
+.about-hero p,
+.about-content p,
+.terms-section p,
+.terms-section li {
+  color: #665451;
+  font-size: 15px;
+}
+.about-hero p { margin: 8px 0 0; }
+.about-content {
+  margin-top: 14px;
+  background: #fff;
+}
+.about-content h2 {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: clamp(23px, 2.7vw, 31px);
+  line-height: 1.3;
+}
+.about-content p { margin: 0; }
+.about-content p + p { margin-top: 11px; }
+
+/* Copyright */
+.terms-hero .english-title { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+.rights-box {
+  margin-top: 18px;
+  padding: 15px 18px;
+  border-left: 4px solid var(--accent);
+  background: #fff;
+}
+.rights-box p { margin: 3px 0; }
+.terms-section { padding: 23px 0; border-bottom: 1px solid var(--line); }
+.terms-section h2 { margin: 0 0 9px; font-size: 20px; }
+.terms-section ul { margin: 8px 0 0; padding-left: 22px; }
+.terms-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 23px; }
+.terms-actions a {
+  min-height: 39px;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--accent);
+  font-weight: 850;
+  text-decoration: none;
+}
+
+@media (max-width: 980px) {
+  .header-inner { align-items: flex-start; padding: 12px 0; }
+  .header-actions { max-width: 380px; }
+  .brand-copy strong { white-space: normal; }
+}
+
+@media (max-width: 760px) {
+  .header-inner {
+    min-height: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 9px;
+    padding: 10px 0 11px;
+  }
+  .brand-heart { width: 45px; height: 45px; flex-basis: 45px; font-size: 28px; }
+  .brand-copy strong,
+  .brand-copy span { font-size: 18px; }
+  .header-actions {
+    max-width: none;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: thin;
+  }
+  .top-btn { flex: 0 0 auto; min-height: 34px; padding: 6px 10px; font-size: 12px; }
+
+  .compact-hero { padding-top: 20px; }
+  .compact-hero .kicker { font-size: 18px; line-height: 1.35; }
+  .relationship-btn { min-width: 76px; min-height: 40px; padding: 7px 14px; font-size: 17px; }
+  .season-btn { font-size: 13px; }
+  .season-intro { padding: 16px; }
+  .season-theme-large { font-size: 28px; }
+  .season-intro p { font-size: 14px; }
+
+  .episode-grid { grid-template-columns: 1fr; gap: 9px; }
+  .episode-card { padding: 14px 15px; }
+  .episode-title-row { align-items: flex-start; }
+  .episode-title-row h2 { font-size: 20px; }
+  .watch-btn { min-height: 32px; padding: 5px 9px; font-size: 11px; }
+  .episode-core p,
+  .emotion-translation p { font-size: 13px; }
+}
+
+@media (max-width: 430px) {
+  .header-inner,
+  .compact-hero,
+  .couple-section,
+  .site-footer,
+  .about-main,
+  .terms-main { width: min(calc(100% - 20px), var(--max)); }
+  .brand-copy strong,
+  .brand-copy span { font-size: 16px; }
+  .compact-hero .kicker { font-size: 17px; }
+  .relationship-tabs { gap: 7px; }
+  .relationship-btn { min-width: 68px; padding: 7px 12px; font-size: 16px; }
+  .season-tabs { gap: 7px; }
+  .season-btn { padding: 7px 10px; font-size: 12px; }
+  .episode-title-row { flex-direction: column; gap: 7px; }
+  .watch-btn { align-self: flex-start; }
+  .about-hero,
+  .about-content,
+  .terms-hero { padding: 20px 18px; }
+}
